@@ -1,0 +1,15 @@
+{
+    "email": "221401033@rajalakshmi.edu.in",
+    "name": "kabelan e",
+    "rollNo": "221401033",
+    "accessCode": "cWyaXW",
+    "clientID": "8022c7d9-d27a-4f18-9ef1-69c0a6ec98c6",
+    "clientSecret": "nEacWBKPtkFVMSFV"
+}
+
+
+{
+    "token_type": "Bearer",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiIyMjE0MDEwMzNAcmFqYWxha3NobWkuZWR1LmluIiwiZXhwIjoxNzUxNjk0MTc0LCJpYXQiOjE3NTE2OTMyNzQsImlzcyI6IkFmZm9yZCBNZWRpY2FsIFRlY2hub2xvZ2llcyBQcml2YXRlIExpbWl0ZWQiLCJqdGkiOiI0ZDRmZjE5OC00Y2Q5LTQyZDUtYTIxMy03ODRjMWU2MDBiZDUiLCJsb2NhbGUiOiJlbi1JTiIsIm5hbWUiOiJrYWJlbGFuIGUiLCJzdWIiOiI4MDIyYzdkOS1kMjdhLTRmMTgtOWVmMS02OWMwYTZlYzk4YzYifSwiZW1haWwiOiIyMjE0MDEwMzNAcmFqYWxha3NobWkuZWR1LmluIiwibmFtZSI6ImthYmVsYW4gZSIsInJvbGxObyI6IjIyMTQwMTAzMyIsImFjY2Vzc0NvZGUiOiJjV3lhWFciLCJjbGllbnRJRCI6IjgwMjJjN2Q5LWQyN2EtNGYxOC05ZWYxLTY5YzBhNmVjOThjNiIsImNsaWVudFNlY3JldCI6Im5FYWNXQktQdGtGVk1TRlYifQ._74_3l-sTjqUKq0WiRsl7jP-BH8S4vL8w9sqqMWJ1F8",
+    "expires_in": 1751694174
+}
