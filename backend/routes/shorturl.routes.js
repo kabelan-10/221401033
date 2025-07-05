@@ -6,7 +6,7 @@ const controller = require('../controllers/shorturl.controller');
 router.post('/', controller.createShortUrl);
 
 // Route to get all short URLs
-router.get('/', controller.getAllUrls);
+// router.get('/', controller.getAllUrls);
 
 // Route to get statistics for a given shortcode
 router.get('/:shortcode', controller.getStats);

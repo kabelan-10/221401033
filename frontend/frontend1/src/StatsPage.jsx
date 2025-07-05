@@ -23,7 +23,7 @@ const StatsPage = () => {
     setLoadingAll(true);
     setFetchError("");
     try {
-      const res = await axios.get("http://localhost:3000/all");
+      const res = await axios.get(`http://localhost:3000/ALL`);
       console.log("Fetched all URLs:", res.data); // Debug output
       setAllUrls(res.data);
     } catch (err) {

@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const geoip = require('geoip-lite');
-const Log = require('../utils/logger');
+const Log = require('../../LoggingMiddleware/logger'); // Adjust the path as necessary
 const { readDB, writeDB } = require('../utils/db');
 
 exports.createShortUrl = async (req, res) => {
@@ -52,6 +52,9 @@ exports.getStats = async (req, res) => {
 
   try {
     const db = readDB();
+    if( req.params.shortcode === 'ALL') {
+      return res.json(db.urls);
+    }
     const shortUrl = db.urls.find(u => u.shortcode === req.params.shortcode);
     if (!shortUrl) return res.status(404).json({ error: 'Shortcode not found' });
 
