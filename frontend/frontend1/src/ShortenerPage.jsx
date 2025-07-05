@@ -4,11 +4,32 @@ import { TextField, Button, Typography } from "@mui/material";
 
 const ShortenerPage = () => {
   const [url, setUrl] = useState("");
+  const [validity, setValidity] = useState("");
   const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
+  const [customShortcode, setCustomShortcode] = useState("");
+
+  const isValidUrl = (input) => {
+    return input.startsWith("http://") || input.startsWith("https://");
+  };
 
   const handleShorten = async () => {
-    const res = await axios.post("http://localhost:3000/shorturls", { url });
-    setResult(res.data);
+    setError("");
+    if (!isValidUrl(url)) {
+      setError("URL must start with http:// or https://");
+      return;
+    }
+
+    try {
+      const payload = { url };
+      if (validity) payload.validity = parseInt(validity);
+      if (customShortcode) payload.shortcode = customShortcode;
+
+      const res = await axios.post("http://localhost:3000/shorturls", payload);
+      setResult(res.data);
+    } catch (err) {
+      setError("Failed to shorten URL");
+    }
   };
 
   return (
@@ -19,8 +40,26 @@ const ShortenerPage = () => {
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         fullWidth
+        sx={{ mb: 2 }}
+        error={!!error}
+        helperText={error}
       />
-      <Button onClick={handleShorten} variant="contained" sx={{ mt: 2 }}>
+      <TextField
+        label="Expiry (in mins, optional)"
+        value={validity}
+        onChange={(e) => setValidity(e.target.value)}
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+      <TextField
+        label="Custom Shortcode (optional)"
+        value={customShortcode}
+        onChange={(e) => setCustomShortcode(e.target.value)}
+        fullWidth
+        sx={{ mb: 2 }}
+      />
+
+      <Button onClick={handleShorten} variant="contained">
         Shorten
       </Button>
       {result && (
